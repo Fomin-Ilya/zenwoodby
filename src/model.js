@@ -215,7 +215,21 @@ function loadModel() {
 function updateTextureOnModel(objectName, newTexture) {
   if (model) {
     model.traverse((object) => {
-      if (object.name === objectName && object.material) {
+      if (
+        object.name === objectName &&
+        object.material &&
+        object.name === "Cube"
+      ) {
+        object.material.map = newTexture;
+        newTexture.wrapS = THREE.RepeatWrapping;
+        newTexture.wrapT = THREE.RepeatWrapping;
+        object.material.needsUpdate = true;
+      }
+      if (
+        object.name === objectName &&
+        object.material &&
+        object.name !== "Cube"
+      ) {
         object.material.map = newTexture;
         newTexture.rotation = Math.PI / 2;
         newTexture.repeat.set(2, 2);
@@ -233,7 +247,7 @@ const controls = new OrbitControls(camera, renderer.domElement);
 controls.enableDamping = true;
 controls.dampingFactor = 0.25;
 controls.screenSpacePanning = false;
-controls.maxPolarAngle = Math.PI / 2;
+controls.maxPolarAngle = Math.PI;
 
 let rotationSpeed = 0.005;
 let rotationDirection = 1;

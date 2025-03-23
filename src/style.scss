@@ -173,6 +173,11 @@ body {
     gap: 20px;
     padding: 0px 15px;
 
+    .first-description {
+      background-color: #122315e0;
+      border-radius: 16px;
+    }
+
     @media (max-width: 425px) {
       gap: 10px;
     }
