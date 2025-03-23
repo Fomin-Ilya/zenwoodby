@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./src/style.scss" />
+    <title>Vite App</title>
+  </head>
+  <body>
+    <section id="header" class="header-section">
+      <header>
+        <span><a href="#header">ZENWOOD</a></span>
+        <nav>
+          <input type="checkbox" id="burger-toggle" />
+          <label for="burger-toggle" class="burger-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </label>
+          <ul>
+            <li><a href="#about">О нас</a></li>
+            <li><a href="#constructor">Конструктор</a></li>
+            <li><a href="#faq">FAQ</a></li>
+          </ul>
+        </nav>
+      </header>
+      <div class="content">
+        <h1 class="first">
+          <span>Ваши моменты</span>
+          наша мастерская
+        </h1>
+        <p>
+          Каждая рамка здесь — не просто обрамление для фото, а маленькая
+          история, созданная вручную. Два любимых снимка, березовая древесина,
+          пропитанная заботой, и лаконичный дизайн — так рождаются уникальные
+          изделия, которые хранят ваши моменты десятилетиями.
+        </p>
+        <button>Создать свою уникальную рамку</button>
+      </div>
+    </section>
+    <section id="about" class="about-section">
+      <div class="top">
+        <h1>Почему <span>наши</span> рамки?</h1>
+      </div>
+      <main>
+        <div class="block">
+          <div class="text">
+            <span>01</span>
+            <h2>Сделано с душой</h2>
+            <p>
+              Каждая рамка — ручная работа из экологичной березовой древесины.
+              Никакого пластика, только тепло натурального дерева.
+            </p>
+          </div>
+          <img src="./public/assets/about-5.jpg" alt="" />
+        </div>
+        <div class="block">
+          <div class="text">
+            <span>02</span>
+            <h2>Вечность в деталях</h2>
+            <p>
+              Специальная пропитка защищает фото от выцветания, а дерево — от
+              времени. Ваши моменты останутся яркими десятилетиями.
+            </p>
+          </div>
+          <img src="./public/assets/about-6.png" alt="" />
+        </div>
+        <div class="block">
+          <div class="text">
+            <span>03</span>
+            <h2>Уникальный подарок</h2>
+            <p>
+              Ищете идеальный подарок? Наши рамки — это не просто сувенир, а
+              эмоция, которая останется навсегда.
+            </p>
+          </div>
+          <img src="./public/assets/about-7.PNG" alt="" />
+        </div>
+        <div class="block">
+          <div class="text">
+            <span>04</span>
+            <h2>Легко вписать в интерьер</h2>
+            <p>
+              Стильный дизайн и натуральные материалы делают наши рамки
+              универсальными. Они гармонично смотрятся в любом интерьере: от
+              классического до современного. Выберите цвет и текстуру, которые
+              подойдут именно вам.
+            </p>
+          </div>
+          <img src="./public/assets/about-4.jpg" alt="" />
+        </div>
+      </main>
+    </section>
+    <section id="constructor" class="constructor-section">
+      <div id="modalWrapper" class="modal-wrapper">
+        <form class="modal" id="orderForm">
+          <div id="cross" class="cross">
+            <svg
+              stroke="currentColor"
+              fill="none"
+              stroke-width="0"
+              viewBox="0 0 15 15"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M12.8536 2.85355C13.0488 2.65829 13.0488 2.34171 12.8536 2.14645C12.6583 1.95118 12.3417 1.95118 12.1464 2.14645L7.5 6.79289L2.85355 2.14645C2.65829 1.95118 2.34171 1.95118 2.14645 2.14645C1.95118 2.34171 1.95118 2.65829 2.14645 2.85355L6.79289 7.5L2.14645 12.1464C1.95118 12.3417 1.95118 12.65829 2.14645 12.8536C2.34171 13.0488 2.65829 13.0488 2.85355 12.8536L7.5 8.20711L12.1464 12.8536C12.3417 13.0488 12.6583 13.0488 12.8536 12.8536C13.0488 12.6583 13.0488 12.3417 12.8536 12.1464L8.20711 7.5L12.8536 2.85355Z"
+                fill="currentColor"
+              ></path>
+            </svg>
+          </div>
+          <p>Форма заказа</p>
+
+          <label for="name">ФИО:</label>
+          <input
+            name="name"
+            id="name"
+            type="text"
+            placeholder="Введите ваше ФИО"
+          />
+          <small class="error-message"></small>
+
+          <label for="phone">Номер телефона:</label>
+          <input
+            name="phone"
+            id="phone"
+            type="text"
+            placeholder="Введите ваш номер телефона"
+          />
+          <small class="error-message"></small>
+
+          <label for="comment">Комментарии к заказу:</label>
+          <textarea
+            name="comment"
+            id="comment"
+            placeholder="Введите комментарии"
+          ></textarea>
+          <small class="error-message"></small>
+
+          <button type="submit">Отправить заказ</button>
+          <small>В ближайшее время мы свяжемся с Вами.</small>
+        </form>
+      </div>
+
+      <div class="text">
+        <h1>Создай <span> ЗD</span> модель!</h1>
+        <p>
+          <span>*</span>Выбери цвет рамки, две фотографии и нажми кнопку
+          «Смоделировать»
+        </p>
+        <button id="buy">Купить сейчас</button>
+      </div>
+      <div class="wrapper">
+        <div id="fullscreen-model" class="fullscreen-model">
+          <div id="cross-fullscreen" class="cross">
+            <svg
+              stroke="currentColor"
+              fill="none"
+              stroke-width="0"
+              viewBox="0 0 15 15"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M12.8536 2.85355C13.0488 2.65829 13.0488 2.34171 12.8536 2.14645C12.6583 1.95118 12.3417 1.95118 12.1464 2.14645L7.5 6.79289L2.85355 2.14645C2.65829 1.95118 2.34171 1.95118 2.14645 2.14645C1.95118 2.34171 1.95118 2.65829 2.14645 2.85355L6.79289 7.5L2.14645 12.1464C1.95118 12.3417 1.95118 12.65829 2.14645 12.8536C2.34171 13.0488 2.65829 13.0488 2.85355 12.8536L7.5 8.20711L12.1464 12.8536C12.3417 13.0488 12.6583 13.0488 12.8536 12.8536C13.0488 12.6583 13.0488 12.3417 12.8536 12.1464L8.20711 7.5L12.8536 2.85355Z"
+                fill="currentColor"
+              ></path>
+            </svg>
+          </div>
+        </div>
+        <button id="simulateBtnFullScreen" class="simulateBtn">
+          Смоделировать
+        </button>
+        <div id="model" class="model">
+          <button id="simulateBtn">Смоделировать</button>
+        </div>
+        <form action="">
+          <div class="colors">
+            <button id="light"></button>
+            <button id="dark"></button>
+          </div>
+          <div class="images">
+            <div class="img" id="leftImageLabel">Фото слева</div>
+            <div class="img" id="rightImageLabel">Фото справа</div>
+          </div>
+          <input
+            name="leftImage"
+            type="file"
+            id="leftImage"
+            accept="image/*"
+            style="display: none"
+          />
+          <input
+            name="rightImage"
+            type="file"
+            id="rightImage"
+            accept="image/*"
+            style="display: none"
+          />
+        </form>
+      </div>
+    </section>
+    <section id="faq" class="faq-section">
+      <h1>FAQ</h1>
+      <div class="wrapper">
+        <div class="block">
+          <div class="question">
+            <h2>Подбор фото</h2>
+            <svg
+              stroke="currentColor"
+              fill="currentColor"
+              stroke-width="0"
+              viewBox="0 0 512 512"
+            >
+              <path
+                d="M256 294.1L383 167c9.4-9.4 24.6-9.4 33.9 0s9.3 24.6 0 34L273 345c-9.1 9.1-23.7 9.3-33.1.7L95 201.1c-4.7-4.7-7-10.9-7-17s2.3-12.3 7-17c9.4-9.4 24.6-9.4 33.9 0l127.1 127z"
+              ></path>
+            </svg>
+          </div>
+          <p class="answer">
+            На сайте вы можете сами подобрать и отредактировать фотки. Но если у
+            вас возникают с этим проблемы можете писать в наши социальные сети и
+            на почту, мы вам обязательно поможем.
+          </p>
+        </div>
+        <div class="block">
+          <div class="question">
+            <h2>Изготовление и доставка</h2>
+            <svg
+              stroke="currentColor"
+              fill="currentColor"
+              stroke-width="0"
+              viewBox="0 0 512 512"
+            >
+              <path
+                d="M256 294.1L383 167c9.4-9.4 24.6-9.4 33.9 0s9.3 24.6 0 34L273 345c-9.1 9.1-23.7 9.3-33.1.7L95 201.1c-4.7-4.7-7-10.9-7-17s2.3-12.3 7-17c9.4-9.4 24.6-9.4 33.9 0l127.1 127z"
+              ></path>
+            </svg>
+          </div>
+          <p class="answer">
+            После получения заказа у нас уходит около 5-ти дней на создание
+            фоторамки. После создания мы можем отправить вам рамку белпочтой,
+            или вы можете забрать её сами из нашей точки по адресу...
+          </p>
+        </div>
+        <div class="block">
+          <div class="question">
+            <h2>Компоненты</h2>
+            <svg
+              stroke="currentColor"
+              fill="currentColor"
+              stroke-width="0"
+              viewBox="0 0 512 512"
+            >
+              <path
+                d="M256 294.1L383 167c9.4-9.4 24.6-9.4 33.9 0s9.3 24.6 0 34L273 345c-9.1 9.1-23.7 9.3-33.1.7L95 201.1c-4.7-4.7-7-10.9-7-17s2.3-12.3 7-17c9.4-9.4 24.6-9.4 33.9 0l127.1 127z"
+              ></path>
+            </svg>
+          </div>
+          <p class="answer">
+            Вся рамка полностью натуральна. Сама рамка сделана из берёзы,
+            фотография распечатана на хорошем струйном принтере на хорошей
+            фотобумаге. Вся рамка упаковывается в двойную картонную коробку с
+            бумажным наполнителем для сохранности товара.
+          </p>
+        </div>
+        <div class="block">
+          <div class="question">
+            <h2>Оплата и стоимость</h2>
+            <svg
+              stroke="currentColor"
+              fill="currentColor"
+              stroke-width="0"
+              viewBox="0 0 512 512"
+            >
+              <path
+                d="M256 294.1L383 167c9.4-9.4 24.6-9.4 33.9 0s9.3 24.6 0 34L273 345c-9.1 9.1-23.7 9.3-33.1.7L95 201.1c-4.7-4.7-7-10.9-7-17s2.3-12.3 7-17c9.4-9.4 24.6-9.4 33.9 0l127.1 127z"
+              ></path>
+            </svg>
+          </div>
+
+          <p class="answer">
+            Стоимость рамки на данный момент составляет 50 BYN. Вся сума
+            оплачивается сразу посредством денежного перевода по реквизитам
+            которые вам будут сообщены менеджером. Возможна персональная скидка
+            при больших заказах.
+          </p>
+        </div>
+        <div class="block">
+          <div class="question">
+            <h2>Оформление заказа</h2>
+            <svg
+              stroke="currentColor"
+              fill="currentColor"
+              stroke-width="0"
+              viewBox="0 0 512 512"
+            >
+              <path
+                d="M256 294.1L383 167c9.4-9.4 24.6-9.4 33.9 0s9.3 24.6 0 34L273 345c-9.1 9.1-23.7 9.3-33.1.7L95 201.1c-4.7-4.7-7-10.9-7-17s2.3-12.3 7-17c9.4-9.4 24.6-9.4 33.9 0l127.1 127z"
+              ></path>
+            </svg>
+          </div>
+          <p class="answer">
+            Заказ можно оформить прямо на сайте в конструкторе. После оформления
+            заказа с вами свяжется менеджер для уточнения некоторых моментов.
+          </p>
+        </div>
+      </div>
+    </section>
+    <footer class="footer">
+      <div class="top">
+        <div class="logo"><a href="#header">ZW</a></div>
+        <div class="info">
+          <ul>
+            <li>Условия доставки</li>
+            <li>Политика конфиденциальности</li>
+            <li>Договор оферты</li>
+          </ul>
+          <ul>
+            <li>+375-(29)-674-01-04</li>
+            <div class="contacts">
+              <li>
+                <svg
+                  stroke="currentColor"
+                  fill="currentColor"
+                  stroke-width="0"
+                  viewBox="0 0 448 512"
+                >
+                  <path
+                    d="M446.7 98.6l-67.6 318.8c-5.1 22.5-18.4 28.1-37.3 17.5l-103-75.9-49.7 47.8c-5.5 5.5-10.1 10.1-20.7 10.1l7.4-104.9 190.9-172.5c8.3-7.4-1.8-11.5-12.9-4.1L117.8 284 16.2 252.2c-22.1-6.9-22.5-22.1 4.6-32.7L418.2 66.4c18.4-6.9 34.5 4.1 28.5 32.2z"
+                  ></path>
+                </svg>
+              </li>
+              <li>
+                <svg
+                  stroke="currentColor"
+                  fill="currentColor"
+                  stroke-width="0"
+                  viewBox="0 0 512 512"
+                >
+                  <path
+                    d="M444 49.9C431.3 38.2 379.9.9 265.3.4c0 0-135.1-8.1-200.9 52.3C27.8 89.3 14.9 143 13.5 209.5c-1.4 66.5-3.1 191.1 117 224.9h.1l-.1 51.6s-.8 20.9 13 25.1c16.6 5.2 26.4-10.7 42.3-27.8 8.7-9.4 20.7-23.2 29.8-33.7 82.2 6.9 145.3-8.9 152.5-11.2 16.6-5.4 110.5-17.4 125.7-142 15.8-128.6-7.6-209.8-49.8-246.5zM457.9 287c-12.9 104-89 110.6-103 115.1-6 1.9-61.5 15.7-131.2 11.2 0 0-52 62.7-68.2 79-5.3 5.3-11.1 4.8-11-5.7 0-6.9.4-85.7.4-85.7-.1 0-.1 0 0 0-101.8-28.2-95.8-134.3-94.7-189.8 1.1-55.5 11.6-101 42.6-131.6 55.7-50.5 170.4-43 170.4-43 96.9.4 143.3 29.6 154.1 39.4 35.7 30.6 53.9 103.8 40.6 211.1zm-139-80.8c.4 8.6-12.5 9.2-12.9.6-1.1-22-11.4-32.7-32.6-33.9-8.6-.5-7.8-13.4.7-12.9 27.9 1.5 43.4 17.5 44.8 46.2zm20.3 11.3c1-42.4-25.5-75.6-75.8-79.3-8.5-.6-7.6-13.5.9-12.9 58 4.2 88.9 44.1 87.8 92.5-.1 8.6-13.1 8.2-12.9-.3zm47 13.4c.1 8.6-12.9 8.7-12.9.1-.6-81.5-54.9-125.9-120.8-126.4-8.5-.1-8.5-12.9 0-12.9 73.7.5 133 51.4 133.7 139.2zM374.9 329v.2c-10.8 19-31 40-51.8 33.3l-.2-.3c-21.1-5.9-70.8-31.5-102.2-56.5-16.2-12.8-31-27.9-42.4-42.4-10.3-12.9-20.7-28.2-30.8-46.6-21.3-38.5-26-55.7-26-55.7-6.7-20.8 14.2-41 33.3-51.8h.2c9.2-4.8 18-3.2 23.9 3.9 0 0 12.4 14.8 17.7 22.1 5 6.8 11.7 17.7 15.2 23.8 6.1 10.9 2.3 22-3.7 26.6l-12 9.6c-6.1 4.9-5.3 14-5.3 14s17.8 67.3 84.3 84.3c0 0 9.1.8 14-5.3l9.6-12c4.6-6 15.7-9.8 26.6-3.7 14.7 8.3 33.4 21.2 45.8 32.9 7 5.7 8.6 14.4 3.8 23.6z"
+                  ></path>
+                </svg>
+              </li>
+              <li>
+                <svg
+                  stroke="currentColor"
+                  fill="currentColor"
+                  stroke-width="0"
+                  viewBox="0 0 24 24"
+                >
+                  <path fill="none" d="M0 0h24v24H0z"></path>
+                  <path
+                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10h5v-2h-5c-4.34 0-8-3.66-8-8s3.66-8 8-8 8 3.66 8 8v1.43c0 .79-.71 1.57-1.5 1.57s-1.5-.78-1.5-1.57V12c0-2.76-2.24-5-5-5s-5 2.24-5 5 2.24 5 5 5c1.38 0 2.64-.56 3.54-1.47.65.89 1.77 1.47 2.96 1.47 1.97 0 3.5-1.6 3.5-3.57V12c0-5.52-4.48-10-10-10zm0 13c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3z"
+                  ></path>
+                </svg>
+              </li>
+            </div>
+          </ul>
+        </div>
+      </div>
+      <div class="bottom">Майданюк Михаил Владимирович УНП АЕ5087069</div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="module" src="./src/header.js"></script>
+    <script type="module" src="./src/modal.js"></script>
+    <script type="module" src="./src/model.js"></script>
+    <script type="module" src="./src/faq.js"></script>
+  </body>
+</html>
