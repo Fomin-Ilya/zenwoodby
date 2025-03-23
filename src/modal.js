@@ -42,14 +42,25 @@ document.getElementById("orderForm").addEventListener("submit", function (e) {
   const lightButtonColor = window.getComputedStyle(lightButton).backgroundColor;
   const darkButtonColor = window.getComputedStyle(darkButton).backgroundColor;
 
-  const hexColor = rgbToHex(lightButtonColor); // Конвертируем в hex цвет для light
+  const hexColor = rgbToHex(lightButtonColor);
   if (hexColor === "#55dd4a") {
     color = "light";
   }
 
-  const hexColorDark = rgbToHex(darkButtonColor); // Конвертируем в hex цвет для dark
+  const hexColorDark = rgbToHex(darkButtonColor);
   if (hexColorDark === "#55dd4a") {
     color = "dark";
+  }
+
+  function rgbToHex(rgb) {
+    const result = /^rgba?\((\d+), (\d+), (\d+)/.exec(rgb);
+    if (!result) return rgb; // если не совпал формат
+    return `#${
+      (1 << 24) +
+      (parseInt(result[1]) << 16) +
+      (parseInt(result[2]) << 8) +
+      parseInt(result[3]).toString(16).slice(1)
+    }`;
   }
 
   const nameInput = document.getElementById("name");
