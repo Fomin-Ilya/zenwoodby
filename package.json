@@ -12,6 +12,7 @@
     "vite": "^6.2.0"
   },
   "dependencies": {
+    "@emailjs/browser": "^4.4.1",
     "sass": "^1.85.1",
     "three": "^0.174.0"
   }

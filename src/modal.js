@@ -1,3 +1,5 @@
+import { init, send } from "@emailjs/browser";
+
 document.getElementById("buy").addEventListener("click", () => {
   document.getElementById("modalWrapper").classList.add("active");
 });
@@ -12,7 +14,7 @@ document.getElementById("modalWrapper").addEventListener("click", (e) => {
   }
 });
 
-emailjs.init("zvYD6mQZ-myn0fg4o");
+init("zvYD6mQZ-myn0fg4o");
 
 function uploadImage(file) {
   return new Promise((resolve, reject) => {
@@ -39,16 +41,17 @@ document.getElementById("orderForm").addEventListener("submit", function (e) {
   const lightButton = document.getElementById("light");
   const darkButton = document.getElementById("dark");
 
-  const lightButtonColor = window.getComputedStyle(lightButton).backgroundColor;
-  const darkButtonColor = window.getComputedStyle(darkButton).backgroundColor;
+  const lightButtonColor = window.getComputedStyle(lightButton).borderColor;
+  const darkButtonColor = window.getComputedStyle(darkButton).borderColor;
 
   const hexColor = rgbToHex(lightButtonColor);
-  if (hexColor === "#55dd4a") {
+
+  if (hexColor === "#22404352a") {
     color = "light";
   }
 
   const hexColorDark = rgbToHex(darkButtonColor);
-  if (hexColorDark === "#55dd4a") {
+  if (hexColorDark === "#22404352a") {
     color = "dark";
   }
 
@@ -124,7 +127,7 @@ document.getElementById("orderForm").addEventListener("submit", function (e) {
           color: color,
         };
 
-        emailjs.send("service_c65h0dn", "template_9sesdgv", emailParams).then(
+        send("service_c65h0dn", "template_9sesdgv", emailParams).then(
           function () {
             alert("Заказ отправлен!");
             document.getElementById("modalWrapper").classList.remove("active");
