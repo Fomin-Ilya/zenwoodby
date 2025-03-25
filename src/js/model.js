@@ -136,6 +136,14 @@ simulateBtn.addEventListener("click", () => {
   }
 });
 
+document.getElementById("buy").addEventListener("click", () => {
+  if (myTexture && myTexture2 && activeWood) {
+    document.getElementById("modalWrapper").classList.add("active");
+  } else {
+    alert("Пожалуйста, смоделируйте модель!");
+  }
+});
+
 simulateBtnFullScreen.addEventListener("click", () => {
   if (simulateBtnFullScreen.textContent === "Показать") {
     console.log("123");
@@ -176,7 +184,11 @@ function loadModel() {
             myTexture.wrapS = THREE.RepeatWrapping;
             myTexture.wrapT = THREE.RepeatWrapping;
             object.material.needsUpdate = true;
-            object.material.color.set(0xffffff);
+            object.material.metalness = 0; // Убирает металлический блеск
+            object.material.roughness = 1;
+            object.material = new THREE.MeshBasicMaterial({
+              map: myTexture,
+            });
           }
           if (object.name === "Mesh_1" && myTexture2) {
             object.material.map = myTexture2;
@@ -185,19 +197,31 @@ function loadModel() {
             myTexture2.wrapS = THREE.RepeatWrapping;
             myTexture2.wrapT = THREE.RepeatWrapping;
             object.material.needsUpdate = true;
-            object.material.color.set(0xffffff);
+            object.material.metalness = 0; // Убирает металлический блеск
+            object.material.roughness = 1;
+            object.material = new THREE.MeshBasicMaterial({
+              map: myTexture2,
+            });
           }
           if (object.name === "Cube" && activeWood) {
             object.material.map = activeWood;
             activeWood.wrapS = THREE.RepeatWrapping;
             activeWood.wrapT = THREE.RepeatWrapping;
+            activeWood.repeat.set(1, 1);
             object.material.needsUpdate = true;
+            object.material.metalness = 0; // Убирает металлический блеск
+            object.material.roughness = 0.8;
+            object.material = new THREE.MeshBasicMaterial({
+              map: activeWood,
+            });
           }
           if (object.name === "Back" && bg) {
             object.material.map = bg;
             bg.wrapS = THREE.RepeatWrapping;
             bg.wrapT = THREE.RepeatWrapping;
             object.material.needsUpdate = true;
+            object.material.metalness = 0; // Убирает металлический блеск
+            object.material.roughness = 1;
           }
         }
       });

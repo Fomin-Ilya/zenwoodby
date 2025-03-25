@@ -6,6 +6,11 @@
   box-sizing: border-box;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -30,9 +35,72 @@ body {
   background-size: cover;
   background-position: 80% center;
 
-  a {
-    text-decoration: none;
-    color: inherit;
+  article {
+    max-width: 1080px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    color: #f3ede4;
+
+    &::after {
+      content: "";
+      width: 100%;
+      height: 100%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      background-color: #122315;
+    }
+
+    ul {
+      z-index: 2;
+    }
+
+    li {
+      z-index: 2;
+    }
+
+    h1 {
+      z-index: 1;
+      text-align: center;
+      font-weight: 900;
+      font-size: 32px;
+      text-transform: uppercase;
+      color: #f3ede4;
+    }
+
+    h2 {
+      z-index: 1;
+      text-align: center;
+      font-weight: 700;
+      font-size: 22px;
+      text-transform: uppercase;
+      color: #f3ede4;
+    }
+    h3 {
+      z-index: 1;
+      text-align: center;
+      font-weight: 700;
+      font-size: 20px;
+      text-transform: uppercase;
+      color: #f3ede4;
+    }
+    p {
+      z-index: 1;
+      width: 100%;
+      text-align: left;
+    }
+
+    button {
+      &::after,
+      &::before {
+        display: none;
+        animation: none !important;
+      }
+    }
   }
 
   header {
@@ -47,6 +115,10 @@ body {
     justify-content: space-between;
     align-items: center;
     z-index: 2;
+
+    .logo {
+      padding: 20px 20px;
+    }
 
     span {
       color: #f3ede4;
@@ -244,6 +316,7 @@ body {
   }
 
   button {
+    z-index: 1;
     cursor: pointer;
     margin-bottom: auto;
     margin-top: 60px;
@@ -895,6 +968,10 @@ body {
       border-radius: 16px;
       background-color: #556053;
       position: relative;
+      background: url("../public/assets/models/image.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
 
       @media (max-width: 1024px) {
         height: 400px;
@@ -999,6 +1076,10 @@ body {
       background-color: #556053;
       z-index: 3;
       transition: all 0.3s ease-in-out;
+      background: url("../public/assets/models/image.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
 
       .cross {
         position: absolute;
@@ -1291,6 +1372,8 @@ body {
   display: flex;
   flex-direction: column;
   gap: 20px;
+  z-index: 2;
+  position: relative;
 
   @media (max-width: 548px) {
     padding: 20px;
@@ -1316,11 +1399,6 @@ body {
         display: flex;
         justify-content: center;
       }
-
-      a {
-        text-decoration: none;
-        color: inherit;
-      }
     }
 
     .info {
@@ -1331,6 +1409,12 @@ body {
 
       @media (max-width: 548px) {
         flex-direction: column;
+      }
+
+      a {
+        &:hover {
+          text-decoration: underline;
+        }
       }
 
       ul {

@@ -1,9 +1,5 @@
 import { init, send } from "@emailjs/browser";
 
-document.getElementById("buy").addEventListener("click", () => {
-  document.getElementById("modalWrapper").classList.add("active");
-});
-
 document.getElementById("cross").addEventListener("click", () => {
   document.getElementById("modalWrapper").classList.remove("active");
 });
