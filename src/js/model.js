@@ -39,6 +39,18 @@ let myTexture2 = null;
 let lightWood = textureLoader.load("/assets/models/light-wood.jpg");
 let darkWood = textureLoader.load("/assets/models/dark-wood.JPG");
 let bg = textureLoader.load("/assets/models/bg.jpg");
+let lightWoodAO = textureLoader.load(
+  "/assets/models/light-wood-ambient-occlusion-map.png"
+);
+let darkWoodAO = textureLoader.load(
+  "/assets/models/dark-wood-ambient-occlusion-map.png"
+);
+let lightWoodNormal = textureLoader.load(
+  "/assets/models/light-wood-normal-map.png"
+);
+let darkWoodNormal = textureLoader.load(
+  "/assets/models/dark-wood-normal-map.png"
+);
 
 let activeWood = null;
 
@@ -53,7 +65,11 @@ const darkButton = document.getElementById("dark");
 
 lightButton.addEventListener("click", (e) => {
   e.preventDefault();
-  activeWood = lightWood;
+  activeWood = {
+    map: lightWood,
+    aoMap: lightWoodAO,
+    normalMap: lightWoodNormal,
+  };
   updateTextureOnModel("Cube", lightWood);
   lightButton.style.borderColor = "#55dd4a";
   darkButton.style.borderColor = "";
@@ -61,7 +77,7 @@ lightButton.addEventListener("click", (e) => {
 
 darkButton.addEventListener("click", (e) => {
   e.preventDefault();
-  activeWood = darkWood;
+  activeWood = { map: darkWood, aoMap: darkWoodAO, normalMap: darkWoodNormal };
   updateTextureOnModel("Cube", darkWood);
   darkButton.style.borderColor = "#55dd4a";
   lightButton.style.borderColor = "";
@@ -204,16 +220,23 @@ function loadModel() {
             });
           }
           if (object.name === "Cube" && activeWood) {
-            object.material.map = activeWood;
-            activeWood.wrapS = THREE.RepeatWrapping;
-            activeWood.wrapT = THREE.RepeatWrapping;
-            activeWood.repeat.set(1, 1);
-            object.material.needsUpdate = true;
-            object.material.metalness = 0; // Убирает металлический блеск
-            object.material.roughness = 0.8;
-            object.material = new THREE.MeshBasicMaterial({
-              map: activeWood,
+            [activeWood.map, activeWood.aoMap, activeWood.normalMap].forEach(
+              (texture) => {
+                texture.wrapS = THREE.RepeatWrapping;
+                texture.wrapT = THREE.RepeatWrapping;
+                texture.repeat.set(1, 1);
+              }
+            );
+
+            object.material = new THREE.MeshStandardMaterial({
+              map: activeWood.map,
+              aoMap: activeWood.aoMap,
+              normalMap: activeWood.normalMap,
+              metalness: 0,
+              roughness: 0.8,
             });
+
+            object.material.needsUpdate = true;
           }
           if (object.name === "Back" && bg) {
             object.material.map = bg;
