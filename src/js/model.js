@@ -126,6 +126,7 @@ rightImageLabel.addEventListener("click", () => {
 });
 
 const simulateBtn = document.getElementById("simulateBtn");
+const modelDisclaimerText = document.getElementById("model-disclaimer-text");
 const simulateBtnFullScreen = document.getElementById("simulateBtnFullScreen");
 
 document.getElementById("cross-fullscreen").addEventListener("click", () => {
@@ -146,6 +147,7 @@ simulateBtn.addEventListener("click", () => {
     simulateBtn.style.opacity = "0.5";
     simulateBtn.style.cursor = "not-allowed";
     simulateBtn.setAttribute("disabled", "true");
+    modelDisclaimerText.style.display = "none";
     loadModel();
   } else {
     alert("Пожалуйста, загрузите оба фото и выберите цвет!");
@@ -200,7 +202,7 @@ function loadModel() {
             myTexture.wrapS = THREE.RepeatWrapping;
             myTexture.wrapT = THREE.RepeatWrapping;
             object.material.needsUpdate = true;
-            object.material.metalness = 0; // Убирает металлический блеск
+            object.material.metalness = 0;
             object.material.roughness = 1;
             object.material = new THREE.MeshBasicMaterial({
               map: myTexture,
@@ -213,7 +215,7 @@ function loadModel() {
             myTexture2.wrapS = THREE.RepeatWrapping;
             myTexture2.wrapT = THREE.RepeatWrapping;
             object.material.needsUpdate = true;
-            object.material.metalness = 0; // Убирает металлический блеск
+            object.material.metalness = 0;
             object.material.roughness = 1;
             object.material = new THREE.MeshBasicMaterial({
               map: myTexture2,
@@ -243,7 +245,7 @@ function loadModel() {
             bg.wrapS = THREE.RepeatWrapping;
             bg.wrapT = THREE.RepeatWrapping;
             object.material.needsUpdate = true;
-            object.material.metalness = 0; // Убирает металлический блеск
+            object.material.metalness = 0;
             object.material.roughness = 1;
           }
         }
@@ -288,7 +290,7 @@ function updateTextureOnModel(objectName, newTexture) {
   }
 }
 
-camera.position.set(5, 5, 5);
+camera.position.set(2.5, 2.5, 2.5);
 
 const controls = new OrbitControls(camera, renderer.domElement);
 controls.enableDamping = true;
