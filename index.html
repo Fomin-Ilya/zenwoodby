@@ -45,6 +45,34 @@
 
     <meta name="author" content="Zenwood" />
     <meta name="copyright" content="Zenwood" />
+
+    <script>
+      !(function (f, b, e, v, n, t, s) {
+        if (f.fbq) return;
+        n = f.fbq = function () {
+          n.callMethod
+            ? n.callMethod.apply(n, arguments)
+            : n.queue.push(arguments);
+        };
+        if (!f._fbq) f._fbq = n;
+        n.push = n;
+        n.loaded = !0;
+        n.version = "2.0";
+        n.queue = [];
+        t = b.createElement(e);
+        t.async = !0;
+        t.src = v;
+        s = b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t, s);
+      })(
+        window,
+        document,
+        "script",
+        "https://connect.facebook.net/en_US/fbevents.js"
+      );
+      fbq("init", "996602892153523");
+      fbq("track", "PageView");
+    </script>
   </head>
   <body>
     <section id="header" class="header-section">
@@ -464,5 +492,12 @@
 
       gtag("config", "G-5Y3F49TH3W");
     </script>
+    <noscript>
+      <img
+        height="1"
+        width="1"
+        src="https://www.facebook.com/tr?id=996602892153523&ev=PageView&noscript=1"
+      />
+    </noscript>
   </body>
 </html>
